@@ -56,6 +56,7 @@ exports.helpdesk = (req, res) => { // Get the city and date from the request
   }) .catch((err) => {
     console.error('ERROR:', err);
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({ 'speech': "Error occurred while saving, try again later", 'displayText': "Error occurred while saving, try again later"}));
+    res.json({ fulfillmentText: 'Error ocurred while saving, try again later' });
+    //res.send(JSON.stringify({ 'speech': "Error occurred while saving, try again later", 'displayText': "Error occurred while saving, try again later"}));
   });
 }
